@@ -20,12 +20,18 @@ def print_poly(f_x) -> str:#refactor rename하면 이름 추천받아서 해줌(
 
     for i in range(len(fx)):
         coef = f_x[i]  # 계수
-
-        if (coef >= 0):
-            poly_expression += "+"
-        poly_expression += f"{coef}x^{term} "
-        term -= 1
-
+        if term != 0:
+            if coef ==0:
+                term -= 1
+                continue
+            if (coef > 0)& (i != 0):
+                poly_expression += "+"
+            poly_expression += f"{coef}x^{term} "
+            term -= 1
+        elif term == 0:
+            if (coef > 0):
+                poly_expression += "+"
+            poly_expression += f"{coef}"
     return poly_expression
 
 
@@ -35,14 +41,14 @@ def calc_poly(xVal, f_x):
 
     for i in range(len(fx)):
         coef = f_x[i]  # 계수
-        return_value += coef * xVal ** term
+        return_value += coef * xVal ** term #이거 계산 우선순위가 어케 되는겨)
         term -= 1
 
     return return_value
 
 
 ## 전역 변수 선언 부분 ##
-fx = [-8,-1,3,2,0,5]
+fx = [8,-1,3,2,0,5,6]
 
 ## 메인 코드 부분 ##
 if __name__ == "__main__":
