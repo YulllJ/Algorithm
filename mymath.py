@@ -28,7 +28,7 @@ def factorial(number) ->int:
 # decorator로 해야돼(수정에는 닫혀있거 확장에는 열려있는 개방폐쇄를 따라야 한다)
 
 # closure decorator
-def timer(func):#성능 체크할때 써먹을 함수
+def timer(func):# 성능 체크할때 써먹을 함수
     def wrapper(* args, **kwargs):
         start = time.time()
         result=func(*args, **kwargs)
