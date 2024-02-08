@@ -1,5 +1,9 @@
-def factorial (number) -> int :
-    pass
+def factorial (number) -> int:
+
+    result = 1
+    for i in range(1, number+1):
+        result=result*i
+    return result
 
 def nCr(n, r) -> int :
     numerator=factorial(n)
@@ -10,3 +14,4 @@ if __name__=="__main__":
     n=int(input("Input n: "))
     r=int(input("Input r: "))
     print(f'{n}C{r}={nCr(n,r)}')
+
