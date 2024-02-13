@@ -97,6 +97,7 @@ if __name__ == "__main__" :
 		pre.link = node
 
 
+
 	print_nodes(head)
 	insert_node("다현", "화사")
 	print_nodes(head)
